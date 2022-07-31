@@ -2,21 +2,27 @@ const focusStyle = "focus:outline-none focus:underline hover:underline";
 
 export const navigation = [
 	{
-		link: "#about",
-		title: "About me",
+		link: "#home",
+		title: "Home",
 		class: focusStyle,
-		content: "ABOUT",
+		content: "Home",
 	},
 	{
-		link: "#projects",
-		title: "Projects",
+		link: "#about",
+		title: "About",
 		class: focusStyle,
-		content: "PROJECTS",
+		content: "About",
+	},
+	{
+		link: "#gallery",
+		title: "View the gallery",
+		class: focusStyle,
+		content: "Gallery",
 	},
 	{
 		link: "#contact",
-		title: "Send me an email",
+		title: "Contact us",
 		class: focusStyle,
-		content: "CONTACT",
+		content: "Contact",
 	},
 ];

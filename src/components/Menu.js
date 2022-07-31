@@ -1,7 +1,7 @@
 export const Menu = ({ onClick, isOpen }) => {
 	return (
 		<button
-			className="flex h-7 w-7 items-center justify-center focus:outline focus:outline-1 focus:outline-secondary md:hidden"
+			className="flex h-7 w-7 items-center justify-center focus:outline focus:outline-1 focus:outline-secondary"
 			onClick={onClick}
 			aria-label="Toggle Menu"
 		>
