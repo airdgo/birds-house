@@ -1,5 +1,6 @@
 import { navigation } from "../constants";
 import { classNames } from "../utils";
+import { ButtonPrimary } from "../components";
 import Link from "next/link";
 
 export const Navigation = ({ onClick, isOpen }) => {
@@ -20,8 +21,8 @@ export const Navigation = ({ onClick, isOpen }) => {
 				))}
 			</ul>
 			<Link href="/book-now">
-				<a className="bg-secondary px-4 py-1 text-primary transition-opacity duration-300 hover:opacity-80">
-					Book now
+				<a>
+					<ButtonPrimary>Book now</ButtonPrimary>
 				</a>
 			</Link>
 		</div>
