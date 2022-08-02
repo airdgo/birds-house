@@ -1,6 +1,6 @@
 import { navigation } from "../constants";
 import { classNames } from "../utils";
-import { ButtonPrimary } from "../components";
+import { NavLink } from "../components";
 import Link from "next/link";
 
 export const Navigation = ({ onClick, isOpen }) => {
@@ -20,11 +20,10 @@ export const Navigation = ({ onClick, isOpen }) => {
 					</li>
 				))}
 			</ul>
-			<Link href="/book-now">
-				<a>
-					<ButtonPrimary>Book now</ButtonPrimary>
-				</a>
-			</Link>
+
+			<NavLink href="/book-now" addClass="hidden lg:block">
+				Book now
+			</NavLink>
 		</div>
 	);
 };
