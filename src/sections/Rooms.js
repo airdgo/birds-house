@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export const Rooms = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [imageIndex, setImageIndex] = useState(0);
 
 	return (
 		<section className="min-h-screen bg-neutral-50 py-12 font-primary text-neutral-500">
@@ -21,12 +22,20 @@ export const Rooms = () => {
 								src={item.imgSrc}
 								alt={item.alt}
 								addClass={item?.class}
-								onClick={() => setIsOpen(true)}
+								onClick={() => {
+									setImageIndex(item.id);
+									setIsOpen(true);
+								}}
 							/>
 						))}
 					</div>
 				</div>
-				<Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+				<Modal
+					isOpen={isOpen}
+					images={roomImages}
+					imageIndex={imageIndex}
+					onClose={() => setIsOpen(false)}
+				/>
 			</div>
 		</section>
 	);
