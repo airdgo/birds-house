@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { classNames } from "../utils";
 
-export const RoomImageContainer = ({ addClass, ...imageProps }) => {
+export const RoomsImagesWrapper = ({ addClass, ...imageProps }) => {
 	return (
 		<div
 			className={classNames(

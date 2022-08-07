@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import { roomsImages } from "../constants";
 
 const slideStyles = {
 	width: "100%",
@@ -47,7 +48,8 @@ const dotStyle = {
 	fontSize: "20px",
 };
 
-export const ImageSlider = ({ slides, index }) => {
+export const ImageSlider = ({ index }) => {
+	const slides = roomsImages;
 	const [currentIndex, setCurrentIndex] = useState(index);
 
 	const goToPrevious = () => {

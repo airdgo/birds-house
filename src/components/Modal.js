@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { ImageSlider } from "../components";
 
-export const Modal = ({ imageIndex, images, isOpen, onClose }) => {
+export const Modal = ({ imageIndex, isOpen, onClose }) => {
 	useEffect(() => {
 		if (isOpen) document.body.style.overflow = "hidden";
 		return () => (document.body.style.overflow = "unset");
@@ -17,7 +17,7 @@ export const Modal = ({ imageIndex, images, isOpen, onClose }) => {
 				onClick={(e) => e.stopPropagation()}
 				className="relative my-16 grid w-[85%] max-w-5xl bg-secondary px-4 py-4 font-primary sm:px-12 sm:py-8 lg:grid-cols-2 lg:px-20 lg:py-12"
 			>
-				<ImageSlider slides={images} index={imageIndex} />
+				<ImageSlider index={imageIndex} />
 			</div>
 		</div>
 	);

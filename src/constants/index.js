@@ -1,2 +1,2 @@
 export * from "./navigation";
-export * from "./roomImages";
+export * from "./roomsImages";
