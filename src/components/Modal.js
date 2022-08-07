@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { roomsImages } from "../constants";
+import { useMousePosition } from "../hooks";
+import { classNames } from "../utils";
 
 export const Modal = ({ imageIndex, isOpen, onClose }) => {
 	// useEffect(() => {
@@ -10,8 +12,9 @@ export const Modal = ({ imageIndex, isOpen, onClose }) => {
 
 	if (!isOpen) return null;
 
-	const slides = roomsImages;
 	const [currentIndex, setCurrentIndex] = useState(imageIndex);
+	const { x, y } = useMousePosition();
+	const slides = roomsImages;
 
 	const goToPrevious = () => {
 		const isFirstSlide = currentIndex === 0;
@@ -29,37 +32,38 @@ export const Modal = ({ imageIndex, isOpen, onClose }) => {
 		setCurrentIndex(slideIndex);
 	};
 
+	function handleNavigation() {
+		if (x < (window.innerWidth * 25) / 100) {
+			goToPrevious();
+		} else if (x > (window.innerWidth * 75) / 100) {
+			goToNext();
+		} else onClose();
+	}
+
 	return (
-		<div className="fixed top-0 left-0 z-[200] grid h-screen w-full place-items-center bg-gray-200">
+		<div className="fixed top-0 left-0 z-[200] grid h-screen w-full cursor-none place-items-center bg-gray-200">
 			<div>
 				<div
-					onClick={goToPrevious}
-					className="absolute top-1/2 left-8 z-10 h-12 w-12 -translate-y-1/2 cursor-pointer rounded-full border-2 border-solid border-gray-300 mix-blend-difference"
-				>
-					<div className="absolute top-1/2 right-[0.85rem] m-auto h-3 w-3 -translate-y-1/2 -rotate-[135deg] border-t-2 border-r-2 border-solid border-inherit" />
-				</div>
-				<div
-					onClick={onClose}
-					className="absolute top-1/2 left-1/2 z-10 h-12 w-12 -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full border-2 border-solid border-gray-300 mix-blend-difference"
-				>
-					<div className="absolute top-1/2 right-[0.55rem] m-auto h-3 w-3 -translate-y-1/2 -rotate-[135deg] border-t-2 border-r-2 border-solid border-inherit" />
-					<div className="absolute top-1/2 left-[0.55rem] m-auto h-3 w-3 -translate-y-1/2 rotate-45 border-t-2 border-r-2 border-solid border-inherit" />
-				</div>
-				<div
-					onClick={goToNext}
-					className="absolute top-1/2 right-8 z-10 h-12 w-12 -translate-y-1/2 cursor-pointer rounded-full border-2 border-solid border-gray-300 mix-blend-difference"
-				>
-					<div className="absolute top-1/2 left-[0.85rem] m-auto h-3 w-3 -translate-y-1/2 rotate-45 border-t-2 border-r-2 border-solid border-inherit" />
-				</div>
+					onClick={handleNavigation}
+					className={classNames(
+						x < (window.innerWidth * 25) / 100
+							? "before:hidden after:right-[0.5rem]"
+							: "",
+						x > (window.innerWidth * 75) / 100 &&
+							"before:left-[0.5rem] after:hidden",
+						"absolute top-0 left-0 h-12 w-12 rounded-full border-2 border-solid border-gray-300 mix-blend-difference before:absolute before:inset-0 before:right-[0.9rem] before:m-auto before:h-3 before:w-3 before:rotate-45 before:border-t-2 before:border-r-2 before:border-inherit after:absolute after:inset-0 after:left-[0.9rem] after:m-auto after:h-3 after:w-3 after:-rotate-[135deg] after:border-t-2 after:border-r-2 after:border-inherit"
+					)}
+					style={{ left: `${x - 24}px`, top: `${y - 24}px` }}
+				/>
 			</div>
 
-			<div className="relative h-full w-full">
+			<div className="relative z-[-1] h-full w-full">
 				<Image
 					src={slides[currentIndex].imgSrc}
 					alt={slides[currentIndex].alt}
 					layout="responsive"
 					objectFit="cover"
-					objectPosition="center"
+					objectPosition="bottom"
 				/>
 			</div>
 
