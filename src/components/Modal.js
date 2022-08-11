@@ -66,7 +66,7 @@ export const Modal = (props) => {
 			onTouchMove={handleTouchMove}
 			className={classNames(
 				isOpen ? "opacity-100" : "pointer-events-none opacity-0",
-				"cursor-non fixed top-0 left-0 z-[200] grid h-screen w-full place-items-center bg-gray-200 transition-opacity duration-500"
+				"fixed top-0 left-0 z-[200] grid h-screen w-full cursor-none place-items-center bg-gray-200 transition-opacity duration-500"
 			)}
 		>
 			<div>
@@ -94,7 +94,7 @@ export const Modal = (props) => {
 
 			<div className="relative z-[-1] h-full w-full">
 				<Image
-					src={slides[currentIndex].imgSrc}
+					src={slides[currentIndex].src}
 					alt={slides[currentIndex].alt}
 					layout="responsive"
 					objectFit="cover"

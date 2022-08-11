@@ -6,18 +6,21 @@ export const Rooms = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [imageIndex, setImageIndex] = useState(0);
 
-	const renderImages = roomsImages.map((item) => (
-		<RoomsImagesWrapper
-			key={item.id}
-			src={item.imgSrc}
-			alt={item.alt}
-			addClass={item?.class}
-			onClick={() => {
-				setImageIndex(item.id);
-				setIsOpen(true);
-			}}
-		/>
-	));
+	const renderImages = roomsImages.map(
+		(item) =>
+			item?.show && (
+				<RoomsImagesWrapper
+					key={item.id}
+					src={item.src}
+					alt={item.alt}
+					addClass={item?.class}
+					onClick={() => {
+						setImageIndex(item.id);
+						setIsOpen(true);
+					}}
+				/>
+			)
+	);
 
 	return (
 		<section className="min-h-screen bg-neutral-50 py-12 font-primary text-neutral-500">
