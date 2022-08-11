@@ -32,10 +32,13 @@ export const Rooms = () => {
 						{renderImages}
 					</div>
 				</div>
+
 				<Modal
 					isOpen={isOpen}
 					onClose={() => setIsOpen(false)}
-					imageIndex={imageIndex}
+					slides={roomsImages}
+					currentIndex={imageIndex}
+					setCurrentIndex={setImageIndex}
 				/>
 			</div>
 		</section>
