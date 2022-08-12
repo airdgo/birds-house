@@ -1,5 +1,5 @@
 import Layout from "../layout/Layout";
-import { Landing, HomeBrake, Rooms } from "../sections";
+import { Landing, HomeBrake, Rooms, RoomBrake } from "../sections";
 
 export default function Index() {
 	return (
@@ -7,6 +7,7 @@ export default function Index() {
 			<Landing />
 			<HomeBrake />
 			<Rooms />
+			<RoomBrake />
 		</Layout>
 	);
 }
