@@ -3,3 +3,4 @@ export * from "./HomeBrake";
 export * from "./Rooms";
 export * from "./RoomsBrake";
 export * from "./Activities";
+export * from "./ActivitiesBrake";
