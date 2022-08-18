@@ -9,31 +9,32 @@ export const Footer = () => {
 	});
 
 	return (
-		<footer className="grid h-screen place-items-center bg-secondary text-gray-400">
-			<div className="grid grid-cols-2 gap-4">
-				<h1 className="col-span-2">Location</h1>
+		<footer className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-600">
+			<div className="my-20 w-[90%] max-w-[90rem]">
+				<h1 className="mb-8 w-full text-3xl font-bold">Location</h1>
+				<div className="grid grid-cols-1 gap-8">
+					<div>
+						<address className="mb-7 not-italic">
+							Strada Alpina nr. 1, Petroșani, România
+						</address>
+						{isLoaded ? <Map /> : <div>Loading...</div>}
+					</div>
 
-				<div>
-					<address className="not-italic">
-						Strada Alpina nr. 1, Petroșani, România
-					</address>
-					{isLoaded ? <Map /> : <div>Loading...</div>}
-				</div>
-
-				<div className="text-center">
-					<p>Instagram / Facebook</p>
-					<div className="grid grid-cols-3 gap-2">
-						{roomsImages.slice(0, 6).map((item) => (
-							<div className="relative aspect-square min-h-[10rem]">
-								<Image
-									src={item.src}
-									alt={item.alt}
-									layout="fill"
-									objectFit="cover"
-									objectPosition="center"
-								/>
-							</div>
-						))}
+					<div className="h-full text-center">
+						<p className="mb-7">Instagram / Facebook</p>
+						<div className="grid grid-cols-2 gap-2">
+							{roomsImages.slice(0, 6).map((item) => (
+								<div className="relative aspect-square min-h-[1rem]">
+									<Image
+										src={item.src}
+										alt={item.alt}
+										layout="fill"
+										objectFit="cover"
+										objectPosition="center"
+									/>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -48,7 +49,7 @@ function Map() {
 		<GoogleMap
 			zoom={10}
 			center={center}
-			mapContainerClassName="w-full h-[20rem]"
+			mapContainerClassName="w-full min-h-[14rem] aspect-video"
 			options={{
 				streetViewControl: false,
 				mapTypeControl: false,
