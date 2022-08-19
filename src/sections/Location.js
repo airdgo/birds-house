@@ -3,13 +3,13 @@ import { roomsImages } from "../constants";
 import { useLoadScript } from "@react-google-maps/api";
 import { Map } from "../components";
 
-export const Footer = () => {
+export const Location = () => {
 	const { isLoaded } = useLoadScript({
 		googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
 	});
 
 	return (
-		<footer className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-600">
+		<section className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-600">
 			<div className="my-20 w-[90%] max-w-[80rem]">
 				<h1 className="mb-8 w-full text-3xl font-bold">Location</h1>
 
@@ -52,7 +52,8 @@ export const Footer = () => {
 						</div>
 					</div>
 				</div>
+				<hr className="mt-16 border-gray-400" />
 			</div>
-		</footer>
+		</section>
 	);
 };

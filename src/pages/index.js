@@ -6,6 +6,7 @@ import {
 	RoomsBrake,
 	Activities,
 	ActivitiesBrake,
+	Location,
 } from "../sections";
 
 export default function Index() {
@@ -17,6 +18,7 @@ export default function Index() {
 			<RoomsBrake />
 			<Activities />
 			<ActivitiesBrake />
+			<Location />
 		</Layout>
 	);
 }
