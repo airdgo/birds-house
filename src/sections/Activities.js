@@ -7,7 +7,7 @@ export const Activities = () => {
 		<section className="h-screen bg-primary">
 			<Carousel show={3} infiniteLoop={true}>
 				{roomsImages.map((item) => (
-					<Image src={item.src} alt={item.alt} />
+					<Image key={item.id} src={item.src} alt={item.alt} />
 				))}
 			</Carousel>
 		</section>

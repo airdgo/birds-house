@@ -41,7 +41,10 @@ export const Location = () => {
 					<div className="h-full w-full text-center">
 						<div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
 							{roomsImages.slice(0, 6).map((item) => (
-								<div className="relative aspect-square min-h-[1rem]">
+								<div
+									key={item.id}
+									className="relative aspect-square min-h-[1rem]"
+								>
 									<Image
 										src={item.src}
 										alt={item.alt}
