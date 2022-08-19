@@ -11,7 +11,9 @@ export const Location = () => {
 	return (
 		<section className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-600">
 			<div className="my-20 w-[90%] max-w-[80rem]">
-				<h1 className="mb-8 w-full text-3xl font-bold">Location</h1>
+				<h1 className="mb-8 w-full text-3xl font-bold md:mb-14 md:text-5xl">
+					Location
+				</h1>
 
 				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
 					<address className="not-italic">
