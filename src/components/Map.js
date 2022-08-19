@@ -8,7 +8,7 @@ export const Map = () => {
 		<GoogleMap
 			zoom={10}
 			center={center}
-			mapContainerClassName="min-h-[14rem] w-full md:min-h-full"
+			mapContainerClassName="min-h-[50vw] w-full lg:min-h-full"
 			options={{
 				streetViewControl: false,
 				mapTypeControl: false,

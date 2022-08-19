@@ -10,15 +10,15 @@ export const Footer = () => {
 
 	return (
 		<footer className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-600">
-			<div className="my-20 w-[90%] max-w-[90rem]">
+			<div className="my-20 w-[90%] max-w-[80rem]">
 				<h1 className="mb-8 w-full text-3xl font-bold">Location</h1>
 
-				<div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
 					<address className="not-italic">
 						Strada Alpina nr. 1, Petroșani, România
 					</address>
 
-					<div className="row-start-3 text-center md:row-start-auto">
+					<div className="row-start-3 text-center lg:row-start-auto">
 						<a
 							href="https://instagram.com/birdshouse__?igshid=YmMyMTA2M2Y="
 							target="_blank"
