@@ -1,5 +1,6 @@
 import "../assets/globals.css";
 import Head from "next/head";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -13,7 +14,10 @@ function MyApp({ Component, pageProps }) {
 				<meta name="author" content="Vlad Dragoi" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Component {...pageProps} />
+
+			<ParallaxProvider>
+				<Component {...pageProps} />
+			</ParallaxProvider>
 		</>
 	);
 }

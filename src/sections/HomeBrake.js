@@ -1,18 +1,18 @@
 import homeBrake from "../assets/home.jpeg";
 import Image from "next/image";
+import { ParallaxBanner } from "react-scroll-parallax";
 
 export const HomeBrake = () => {
+	const image =
+		"https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1875&ixid=MnwxfDB8MXxyYW5kb218MHx8TGFuZHNjYXBlfHx8fHx8MTY1OTQ1OTI5Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1500";
+
 	return (
 		<section className="relative min-h-screen bg-primary text-secondary">
 			<div className="relative h-[140vw] min-h-screen overflow-hidden bg-inherit opacity-40 lg:h-[120vw]">
-				<div className="absolute top-0 z-10 h-full w-full bg-[url('https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1875&ixid=MnwxfDB8MXxyYW5kb218MHx8TGFuZHNjYXBlfHx8fHx8MTY1OTQ1OTI5Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1500')] bg-cover bg-fixed bg-no-repeat" />
-				{/* <Image
-					src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1875&ixid=MnwxfDB8MXxyYW5kb218MHx8TGFuZHNjYXBlfHx8fHx8MTY1OTQ1OTI5Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1500"
-					alt="Home Brake"
-					objectFit="cover"
-					objectPosition="center"
-					layout="fill"
-				/> */}
+				<ParallaxBanner
+					layers={[{ image: image, speed: 20 }]}
+					className="h-full w-full"
+				/>
 				<div className="absolute inset-0 z-20 m-auto h-[80%] w-4/5 rounded-full shadow-[0_0_0_9999px_#1e1e1e] sm:h-[90%]" />
 			</div>
 
