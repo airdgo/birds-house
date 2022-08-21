@@ -1,7 +1,6 @@
 import { navigation } from "../constants";
 import { classNames } from "../utils";
 import { NavLink } from "../components";
-import Link from "next/link";
 
 export const Navigation = ({ onClick, isOpen }) => {
 	return (
