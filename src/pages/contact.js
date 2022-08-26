@@ -1,7 +1,7 @@
 import Layout from "../layout/Layout";
 import Image from "next/image";
 import bird from "../assets/bird.svg";
-import contactBg from "../assets/contact-bg-2.svg";
+import contactBg from "../assets/contact-bg.svg";
 
 export default function Contact() {
 	return (
