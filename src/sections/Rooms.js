@@ -23,7 +23,10 @@ export const Rooms = () => {
 	);
 
 	return (
-		<section className="min-h-screen bg-neutral-50 py-12 font-primary text-neutral-600">
+		<section
+			id="rooms"
+			className="min-h-screen bg-neutral-50 py-12 font-primary text-neutral-600"
+		>
 			<div className="mx-auto h-full w-[90%] max-w-[90rem]">
 				<div>
 					<h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
