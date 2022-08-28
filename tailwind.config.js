@@ -14,9 +14,6 @@ module.exports = {
 				primary: "#1E1E1E",
 				secondary: "#FAFAFA",
 			},
-			gridTemplateColumns: {
-				footer: "repeat(auto-fill, minmax(200px, 1fr))",
-			},
 		},
 	},
 	plugins: [],
