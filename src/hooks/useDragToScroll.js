@@ -22,6 +22,7 @@ export const useDragToScroll = (ref) => {
 	};
 
 	const onMouseDown = (event) => {
+		event.preventDefault();
 		if (ref.current) {
 			// Save the position at the moment the user presses down
 			initialPosition = {

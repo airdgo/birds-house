@@ -2,31 +2,63 @@ import { useRef } from "react";
 import { useDragToScroll } from "../hooks";
 import Image from "next/image";
 import backgroundImage from "../assets/home.jpeg";
+import biking from "../assets/biking.svg";
+import snowboarding from "../assets/snowboarding.svg";
+import hiking from "../assets/hiking.svg";
+import birds from "../assets/birds.svg";
 
 export const Activities = () => {
 	const ref = useRef();
 	const onMouseDown = useDragToScroll(ref);
 
+	const imageArry = [
+		{ id: 0, src: biking, alt: "biking icon" },
+		{ id: 1, src: backgroundImage, alt: "bg" },
+		{ id: 2, src: snowboarding, alt: "snowboarding icon" },
+		{ id: 3, src: backgroundImage, alt: "bg" },
+		{ id: 4, src: hiking, alt: "hiking icon" },
+		{ id: 5, src: backgroundImage, alt: "bg" },
+		{ id: 6, src: birds, alt: "birds icon" },
+	];
+
 	return (
 		<section
 			id="activities"
-			className="grid min-h-screen place-items-center bg-primary"
+			className="relative grid min-h-screen place-items-center bg-primary"
 		>
 			<div
 				ref={ref}
 				onMouseDown={onMouseDown}
-				className="flex w-full overflow-auto"
+				className="flex h-full w-full flex-col items-center overflow-auto no-scrollbar md:flex-row"
 			>
-				<div className="relative h-[30rem] w-[50rem] shrink-0 overflow-hidden rounded-3xl">
-					<Image
-						src={backgroundImage}
-						layout="fill"
-						objectFit="cover"
-						objectPosition="center"
-					/>
-				</div>
-				<div className="h-[30rem] w-[50rem] shrink-0 bg-yellow-400"></div>
-				<div className="h-[30rem] w-[50rem] shrink-0 bg-green-400"></div>
+				{imageArry.map((image) => {
+					const isImageIdEven = image.id % 2 === 0;
+
+					return isImageIdEven ? (
+						<div
+							key={image.id}
+							className="z-10 flex h-[20rem] w-[50rem] shrink-0 justify-center overflow-hidden rounded-3xl md:h-[30rem] md:w-[20rem]"
+						>
+							<div className="relative flex w-full rotate-45 flex-col justify-center md:rotate-0">
+								<Image src={image.src} alt={image.alt} />
+								<hr className="border border-secondary" />
+							</div>
+						</div>
+					) : (
+						<div
+							key={image.id}
+							className="relative z-10 h-[30rem] w-full shrink-0 overflow-hidden rounded-3xl md:w-[40rem]"
+						>
+							<Image
+								src={image.src}
+								alt={image.alt}
+								layout="fill"
+								objectFit="cover"
+								objectPosition="center"
+							/>
+						</div>
+					);
+				})}
 			</div>
 		</section>
 	);
