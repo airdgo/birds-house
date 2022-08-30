@@ -33,6 +33,13 @@ module.exports = {
 						display: "none",
 					},
 				},
+
+				".rotate-flip-12": {
+					transform: "rotateY(180deg) rotateZ(12deg)",
+				},
+				".-rotate-flip-12": {
+					transform: "rotateY(180deg) rotateZ(-12deg)",
+				},
 			});
 		}),
 	],
