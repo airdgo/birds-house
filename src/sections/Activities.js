@@ -37,7 +37,7 @@ export const Activities = () => {
 					return isImageIdEven ? (
 						<div
 							key={image.id}
-							className="z-10 flex h-[13rem] w-[50rem] shrink-0 justify-center overflow-hidden rounded-3xl md:h-[30rem] md:w-[20rem]"
+							className="z-10 flex h-[32vw] min-h-[10rem] w-[50rem] shrink-0 justify-center overflow-hidden rounded-3xl md:h-[30rem] md:w-[20rem]"
 						>
 							<div className="relative flex w-full flex-col justify-center gap-[2px]">
 								<Image src={image.src} alt={image.alt} />
@@ -47,9 +47,9 @@ export const Activities = () => {
 					) : (
 						<div
 							key={image.id}
-							className="relative z-10 h-[20rem] w-full shrink-0 md:h-[30rem] md:w-[40rem]"
+							className="relative z-10 h-[50vw] min-h-[15rem] w-full shrink-0 md:h-[30rem] md:w-[40rem]"
 						>
-							<div className="relative mx-auto h-full w-[90%] overflow-hidden rounded-3xl md:w-full">
+							<div className="relative mx-auto h-full w-[90%] overflow-hidden rounded-xl md:w-full md:rounded-3xl">
 								<Image
 									src={image.src}
 									alt={image.alt}
