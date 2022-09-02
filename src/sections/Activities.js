@@ -29,7 +29,7 @@ export const Activities = () => {
 			<div
 				ref={ref}
 				onMouseDown={onMouseDown}
-				className="flex h-full w-full flex-col items-center overflow-auto no-scrollbar  md:flex-row first:[&>div]:rotate-12 [&:nth-child(3)]:[&>div]:rotate-flip-12 [&:nth-child(5)]:[&>div]:-rotate-flip-12"
+				className="flex h-full w-full flex-col items-center overflow-auto no-scrollbar md:flex-row first:[&>div]:rotate-12 md:first:[&>div]:rotate-0 [&:nth-child(3)]:[&>div]:rotate-flip-12 md:[&:nth-child(3)]:[&>div]:rotate-0 [&:nth-child(5)]:[&>div]:-rotate-flip-12 md:[&:nth-child(5)]:[&>div]:rotate-0 last:[&>div]:[&>span]:mb-7"
 			>
 				{imageArry.map((image) => {
 					const isImageIdEven = image.id % 2 === 0;
