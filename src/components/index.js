@@ -4,5 +4,5 @@ export * from "./Menu";
 export * from "./Navigation";
 export * from "./NavLink";
 export * from "./RoomsImagesWraper";
-export * from "./Modal";
+export * from "./Carousel";
 export * from "./Map";

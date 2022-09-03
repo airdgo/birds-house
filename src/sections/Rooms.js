@@ -1,4 +1,4 @@
-import { Modal, RoomsImagesWrapper } from "../components";
+import { Carousel, RoomsImagesWrapper } from "../components";
 import { roomsImages } from "../constants";
 import { useState } from "react";
 
@@ -38,7 +38,7 @@ export const Rooms = () => {
 					{renderImages}
 				</div>
 
-				<Modal
+				<Carousel
 					isOpen={isOpen}
 					onClose={() => setIsOpen(false)}
 					slides={roomsImages}
