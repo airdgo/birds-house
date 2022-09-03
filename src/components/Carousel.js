@@ -11,6 +11,17 @@ export const Carousel = (props) => {
 		return () => (document.body.style.overflow = "unset");
 	});
 
+	useEffect(() => {
+		const closeModal = (e) => {
+			if (e.key === "Escape") {
+				onClose();
+			}
+		};
+
+		window.addEventListener("keydown", closeModal);
+		return () => window.removeEventListener("keydown", closeModal);
+	}, []);
+
 	const goToPrevious = () => {
 		const isFirstSlide = currentIndex === 0;
 		const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
