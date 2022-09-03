@@ -53,7 +53,7 @@ export const Carousel = (props) => {
 			onTouchMove={handleTouchMove}
 			className={classNames(
 				isOpen ? "opacity-100" : "pointer-events-none opacity-0",
-				"fixed top-0 left-0 z-[200] flex min-h-screen w-full items-center justify-center bg-primary transition-opacity duration-500"
+				"fixed top-0 left-0 z-[200] flex min-h-screen w-full cursor-auto items-center justify-center bg-primary transition-opacity duration-500"
 			)}
 			onClick={onClose}
 		>
@@ -61,12 +61,12 @@ export const Carousel = (props) => {
 				onClick={(e) => e.stopPropagation()}
 				className="relative flex w-[90%] flex-col gap-4 md:gap-6"
 			>
-				<div className="relative z-[-1] aspect-[2/1] h-auto">
+				<div className="relative z-[-1] h-[80vh] w-full">
 					<Image
 						src={slides[currentIndex].src}
 						alt={slides[currentIndex].alt}
 						layout="fill"
-						objectFit="cover"
+						objectFit="contain"
 						objectPosition="center"
 					/>
 				</div>
