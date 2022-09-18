@@ -1,8 +1,11 @@
 import { ParallaxBanner } from "react-scroll-parallax";
+import homeBrake from "../assets/homeBrake2.JPG";
 
 export const HomeBrake = () => {
-	const image =
-		"https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1875&ixid=MnwxfDB8MXxyYW5kb218MHx8TGFuZHNjYXBlfHx8fHx8MTY1OTQ1OTI5Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1500";
+	// const image =
+	// 	"https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1875&ixid=MnwxfDB8MXxyYW5kb218MHx8TGFuZHNjYXBlfHx8fHx8MTY1OTQ1OTI5Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1500";
+	const image = homeBrake.src;
+	// console.log(homeBrake.src);
 
 	return (
 		<section className="relative min-h-screen bg-primary text-secondary">
