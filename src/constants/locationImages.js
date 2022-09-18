@@ -1,7 +1,7 @@
 import i1 from "../assets/location/loc-1.jpg";
 import i2 from "../assets/location/loc-2.jpg";
 import i3 from "../assets/location/loc-3.jpg";
-import i4 from "../assets/location/loc-4.jpeg";
+import i4 from "../assets/location/loc-4.jpg";
 import i5 from "../assets/location/loc-5.jpg";
 import i6 from "../assets/location/loc-6.jpg";
 
