@@ -16,6 +16,9 @@ module.exports = {
 				primary: "#1E1E1E",
 				secondary: "#FAFAFA",
 			},
+			cursor: {
+				drag: "url('../assets/cursor/cursor-drag.svg'), auto",
+			},
 		},
 	},
 	plugins: [
