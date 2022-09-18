@@ -1,15 +1,12 @@
 import { ParallaxBanner } from "react-scroll-parallax";
-import homeBrake from "../assets/homeBrake2.JPG";
+import homeBrake from "../assets/homeBrake3.JPG";
 
 export const HomeBrake = () => {
-	// const image =
-	// 	"https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1875&ixid=MnwxfDB8MXxyYW5kb218MHx8TGFuZHNjYXBlfHx8fHx8MTY1OTQ1OTI5Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1500";
 	const image = homeBrake.src;
-	// console.log(homeBrake.src);
 
 	return (
 		<section className="relative min-h-screen bg-primary text-secondary">
-			<div className="relative h-[140vw] min-h-screen overflow-hidden bg-inherit opacity-40 lg:h-[120vw]">
+			<div className="relative h-[140vw] min-h-screen overflow-hidden bg-inherit opacity-80 lg:h-[120vw]">
 				<ParallaxBanner
 					layers={[{ image: image, speed: 20 }]}
 					className="h-full w-full"
