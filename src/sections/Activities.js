@@ -18,9 +18,9 @@ export const Activities = () => {
 				>
 					<section
 						id="activities"
-						className="relative min-h-[200vh] bg-primary py-80"
+						className="relative min-h-[200vh] bg-primary py-[20vw]"
 					>
-						<div className="flex h-full w-full flex-col items-center overflow-hidden md:sticky md:top-60 md:flex-row md:overflow-visible first:[&>div]:rotate-12 md:first:[&>div]:rotate-0 [&:nth-child(3)]:[&>div]:rotate-flip-12 md:[&:nth-child(3)]:[&>div]:rotate-0 [&:nth-child(5)]:[&>div]:-rotate-flip-12 md:[&:nth-child(5)]:[&>div]:rotate-0 last:[&>div]:[&>span]:mb-7">
+						<div className="flex h-full w-full flex-col items-center overflow-hidden md:sticky md:top-[12vw] md:flex-row md:overflow-visible first:[&>div]:rotate-12 md:first:[&>div]:rotate-0 [&:nth-child(3)]:[&>div]:rotate-flip-12 md:[&:nth-child(3)]:[&>div]:rotate-0 [&:nth-child(5)]:[&>div]:-rotate-flip-12 md:[&:nth-child(5)]:[&>div]:rotate-0 last:[&>div]:[&>span]:mb-7">
 							{carouselImages.map((image) => {
 								const isImageIdEven = image.id % 2 === 0;
 
@@ -44,7 +44,7 @@ export const Activities = () => {
 												setImageIndex(image.id - 1);
 												setIsOpen(true);
 											}}
-											className="relative mx-auto h-full w-[90%] overflow-hidden rounded-xl md:w-full md:rounded-3xl"
+											className="relative mx-auto h-full w-[90%] cursor-pointer overflow-hidden rounded-xl md:w-full md:rounded-3xl"
 										>
 											<Image
 												src={image.src}
