@@ -9,31 +9,48 @@ export const Activities = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [imageIndex, setImageIndex] = useState(0);
 	gsap.registerPlugin(ScrollTrigger);
+	const matchMedia = gsap.matchMedia(),
+		breakPoint = 800;
 
 	useEffect(() => {
-		let ctx = gsap.context(() => {
-			gsap.to(".element", {
-				x: "-100%",
-				scrollTrigger: {
-					trigger: ".section",
-					markers: true,
-					scrub: 0.5,
-					end: "100%",
-					pin: true,
-					anticipatePin: 1,
+		const gsapContext = gsap.context(() => {
+			matchMedia.add(
+				{
+					isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
 				},
-			});
+				(context) => {
+					const { isDesktop } = context.conditions,
+						trigger = isDesktop ? "#activities" : "";
+					if (isDesktop) {
+						const tl = gsap.timeline({
+							scrollTrigger: {
+								trigger: trigger,
+								markers: true,
+								scrub: 0.5,
+								end: "100%",
+								pin: true,
+							},
+						});
+						tl.to("#element-to-animate", { x: "-100%" });
+
+						return () => {};
+					}
+				}
+			);
 		});
-		return () => ctx.revert();
+		return () => gsapContext.revert();
 	}, []);
 
 	return (
 		<>
 			<section
 				id="activities"
-				className="section relative h-screen overflow-hidden bg-primary"
+				className="relative flex min-h-[100vh] items-center justify-center overflow-hidden bg-primary"
 			>
-				<div className="element absolute top-1/2 left-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center overflow-hidden md:flex-row md:overflow-visible first:[&>div]:rotate-12 md:first:[&>div]:rotate-0 [&:nth-child(3)]:[&>div]:rotate-flip-12 md:[&:nth-child(3)]:[&>div]:rotate-0 [&:nth-child(5)]:[&>div]:-rotate-flip-12 md:[&:nth-child(5)]:[&>div]:rotate-0 last:[&>div]:[&>span]:mb-7">
+				<div
+					id="element-to-animate"
+					className="element top-1/2 left-1/2 flex h-full w-full flex-col items-center overflow-hidden md:flex-row md:overflow-visible first:[&>div]:rotate-12 md:first:[&>div]:rotate-0 [&:nth-child(3)]:[&>div]:rotate-flip-12 md:[&:nth-child(3)]:[&>div]:rotate-0 [&:nth-child(5)]:[&>div]:-rotate-flip-12 md:[&:nth-child(5)]:[&>div]:rotate-0 last:[&>div]:[&>span]:mb-7"
+				>
 					{carouselImages.map((image) => {
 						const isImageIdEven = image.id % 2 === 0;
 
