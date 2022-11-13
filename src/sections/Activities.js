@@ -13,31 +13,34 @@ export const Activities = () => {
 		breakPoint = 800;
 
 	useEffect(() => {
-		const gsapContext = gsap.context(() => {
+		const addAnimation = (context) => {
+			const { isDesktop } = context.conditions,
+				trigger = isDesktop ? "#activities" : "";
+			if (isDesktop) {
+				const tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: trigger,
+						markers: true,
+						scrub: 0.5,
+						end: "100%",
+						pin: true,
+					},
+				});
+				tl.to("#element-to-animate", { x: "-100%" });
+				return () => {};
+			}
+		};
+
+		const addMatchMedia = () => {
 			matchMedia.add(
 				{
 					isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
 				},
-				(context) => {
-					const { isDesktop } = context.conditions,
-						trigger = isDesktop ? "#activities" : "";
-					if (isDesktop) {
-						const tl = gsap.timeline({
-							scrollTrigger: {
-								trigger: trigger,
-								markers: true,
-								scrub: 0.5,
-								end: "100%",
-								pin: true,
-							},
-						});
-						tl.to("#element-to-animate", { x: "-100%" });
-
-						return () => {};
-					}
-				}
+				addAnimation
 			);
-		});
+		};
+
+		const gsapContext = gsap.context(addMatchMedia);
 		return () => gsapContext.revert();
 	}, []);
 
