@@ -58,12 +58,13 @@ export const Activities = () => {
 					className="flex h-full w-full flex-col items-center overflow-hidden md:flex-row md:overflow-visible first:[&>div]:rotate-12 md:first:[&>div]:rotate-0 [&:nth-child(3)]:[&>div]:rotate-flip-12 md:[&:nth-child(3)]:[&>div]:rotate-0 [&:nth-child(5)]:[&>div]:rotate-12 md:[&:nth-child(5)]:[&>div]:rotate-0 last:[&>div]:[&>span]:mb-7"
 				>
 					{visibleImages.map((image) => {
-						const isImageIdEven = image.id % 2 === 0;
+						const isIconImage = !!image.icon;
 
-						return isImageIdEven ? (
-							<EvenImage image={image} />
+						return isIconImage ? (
+							<IconImage key={image.id} image={image} />
 						) : (
-							<OddImage
+							<PlainImage
+								key={image.id}
 								image={image}
 								setImageIndex={setImageIndex}
 								setIsOpen={setIsOpen}
@@ -83,12 +84,9 @@ export const Activities = () => {
 	);
 };
 
-export const EvenImage = ({ image }) => {
+export const IconImage = ({ image }) => {
 	return (
-		<div
-			key={image.id}
-			className="z-10 flex h-[32vw] min-h-[10rem] w-[50rem] shrink-0 justify-center overflow-hidden rounded-3xl md:h-[30vw] md:w-[20vw]"
-		>
+		<div className="z-10 flex h-[32vw] min-h-[10rem] w-[50rem] shrink-0 justify-center overflow-hidden rounded-3xl md:h-[30vw] md:w-[20vw]">
 			<div className="relative flex w-full flex-col justify-center gap-[2px]">
 				<Image src={image.src} alt={image.alt} />
 				<hr className="border border-secondary" />
@@ -97,12 +95,9 @@ export const EvenImage = ({ image }) => {
 	);
 };
 
-export const OddImage = ({ image, setImageIndex, setIsOpen }) => {
+export const PlainImage = ({ image, setImageIndex, setIsOpen }) => {
 	return (
-		<div
-			key={image.id}
-			className="relative z-10 h-[50vw] min-h-[15rem] w-full shrink-0 md:h-[30vw] md:w-[40vw]"
-		>
+		<div className="relative z-10 h-[50vw] min-h-[15rem] w-full shrink-0 md:h-[30vw] md:w-[40vw]">
 			<div
 				onClick={() => {
 					setImageIndex(image.id);
