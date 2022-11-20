@@ -5,7 +5,7 @@ import { NavLink } from "../components";
 
 export const Landing = () => {
 	return (
-		<section className="relative text-secondary">
+		<section className="relative z-10 text-secondary">
 			<Image
 				style={{ zIndex: "-1" }}
 				src={backgroundImage}

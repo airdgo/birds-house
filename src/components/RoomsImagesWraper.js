@@ -15,6 +15,7 @@ export const RoomsImagesWrapper = ({ addClass, ...imageProps }) => {
 				layout="fill"
 				objectFit="cover"
 				objectPosition="center"
+				placeholder="blur"
 			/>
 		</div>
 	);

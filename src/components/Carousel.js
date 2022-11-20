@@ -12,15 +12,19 @@ export const Carousel = (props) => {
 	});
 
 	useEffect(() => {
-		const closeModal = (e) => {
-			if (e.key === "Escape") {
-				onClose();
-			}
+		const options = {
+			Escape: onClose,
+			ArrowLeft: goToPrevious,
+			ArrowRight: goToNext,
 		};
 
-		window.addEventListener("keydown", closeModal);
-		return () => window.removeEventListener("keydown", closeModal);
-	}, []);
+		const keydown = (e) => {
+			options[e.key]?.();
+		};
+
+		window.addEventListener("keydown", keydown);
+		return () => window.removeEventListener("keydown", keydown);
+	}, [currentIndex]);
 
 	const goToPrevious = () => {
 		const isFirstSlide = currentIndex === 0;
@@ -79,6 +83,8 @@ export const Carousel = (props) => {
 						layout="fill"
 						objectFit="contain"
 						objectPosition="center"
+						quality={100}
+						placeholder="blur"
 					/>
 				</div>
 
