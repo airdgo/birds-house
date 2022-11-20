@@ -61,7 +61,7 @@ export const Activities = () => {
 						const isIconImage = !!image.icon;
 
 						return isIconImage ? (
-							<IconImage key={image.id} image={image} />
+							<IconImage key={image.alt} image={image} />
 						) : (
 							<PlainImage
 								key={image.id}
