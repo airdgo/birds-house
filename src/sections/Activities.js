@@ -111,6 +111,7 @@ export const PlainImage = ({ image, setImageIndex, setIsOpen }) => {
 					layout="fill"
 					objectFit="cover"
 					objectPosition="center"
+					placeholder="blur"
 				/>
 			</div>
 		</div>

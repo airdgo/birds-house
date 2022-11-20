@@ -84,6 +84,7 @@ export const Carousel = (props) => {
 						objectFit="contain"
 						objectPosition="center"
 						quality={100}
+						placeholder="blur"
 					/>
 				</div>
 

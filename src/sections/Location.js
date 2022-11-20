@@ -51,6 +51,7 @@ export const Location = () => {
 										layout="fill"
 										objectFit="cover"
 										objectPosition={item.position ? item.position : "center"}
+										placeholder="blur"
 									/>
 								</div>
 							))}
