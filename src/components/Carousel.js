@@ -1,131 +1,106 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { classNames } from "../utils";
 
 export const Carousel = (props) => {
-	const { children, show, infiniteLoop } = props;
-
-	const [currentIndex, setCurrentIndex] = useState(infiniteLoop ? show : 0);
-	const [length, setLength] = useState(children.length);
-
-	const [isRepeating, setIsRepeating] = useState(
-		infiniteLoop && children.length > show
-	);
-	const [transitionEnabled, setTransitionEnabled] = useState(true);
-
+	const { slides, currentIndex, setCurrentIndex, isOpen, onClose } = props;
 	const [touchPosition, setTouchPosition] = useState(null);
 
-	// Set the length to match current children from props
 	useEffect(() => {
-		setLength(children.length);
-		setIsRepeating(infiniteLoop && children.length > show);
-	}, [children, infiniteLoop, show]);
+		if (isOpen) document.body.style.overflow = "hidden";
+		return () => (document.body.style.overflow = "unset");
+	});
 
 	useEffect(() => {
-		if (isRepeating) {
-			if (currentIndex === show || currentIndex === length) {
-				setTransitionEnabled(true);
-			}
-		}
-	}, [currentIndex, isRepeating, show, length]);
+		const options = {
+			Escape: onClose,
+			ArrowLeft: goToPrevious,
+			ArrowRight: goToNext,
+		};
 
-	const next = () => {
-		if (isRepeating || currentIndex < length - show) {
-			setCurrentIndex((prevState) => prevState + 1);
-		}
+		const keydown = (e) => {
+			options[e.key]?.();
+		};
+
+		window.addEventListener("keydown", keydown);
+		return () => window.removeEventListener("keydown", keydown);
+	}, [currentIndex]);
+
+	const goToPrevious = () => {
+		const isFirstSlide = currentIndex === 0;
+		const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+		setCurrentIndex(newIndex);
 	};
 
-	const prev = () => {
-		if (isRepeating || currentIndex > 0) {
-			setCurrentIndex((prevState) => prevState - 1);
-		}
+	const goToNext = () => {
+		const isLastSlide = currentIndex === slides.length - 1;
+		const newIndex = isLastSlide ? 0 : currentIndex + 1;
+		setCurrentIndex(newIndex);
 	};
 
-	const handleTouchStart = (e) => {
+	function handleTouchStart(e) {
 		const touchDown = e.touches[0].clientX;
 		setTouchPosition(touchDown);
-	};
+	}
 
-	const handleTouchMove = (e) => {
+	function handleTouchMove(e) {
 		const touchDown = touchPosition;
 
-		if (touchDown === null) {
-			return;
-		}
+		if (touchDown === null) return;
 
 		const currentTouch = e.touches[0].clientX;
 		const diff = touchDown - currentTouch;
 
 		if (diff > 5) {
-			next();
+			goToNext();
 		}
 
 		if (diff < -5) {
-			prev();
+			goToPrevious();
 		}
 
 		setTouchPosition(null);
-	};
-
-	const handleTransitionEnd = () => {
-		if (isRepeating) {
-			if (currentIndex === 0) {
-				setTransitionEnabled(false);
-				setCurrentIndex(length);
-			} else if (currentIndex === length + show) {
-				setTransitionEnabled(false);
-				setCurrentIndex(show);
-			}
-		}
-	};
-	const renderExtraPrev = () => {
-		let output = [];
-		for (let index = 0; index < show; index++) {
-			output.push(children[length - 1 - index]);
-		}
-		output.reverse();
-		return output;
-	};
-
-	const renderExtraNext = () => {
-		let output = [];
-		for (let index = 0; index < show; index++) {
-			output.push(children[index]);
-		}
-		return output;
-	};
+	}
 
 	return (
-		<div className="flex w-full flex-col">
-			<div className="relative flex w-full">
-				{/* You can alwas change the content of the button to other things */}
-				{(isRepeating || currentIndex > 0) && (
-					<button onClick={prev} className="left-arrow">
-						&lt;
-					</button>
-				)}
-				<div
-					className="h-full w-full overflow-hidden"
-					onTouchStart={handleTouchStart}
-					onTouchMove={handleTouchMove}
-				>
-					<div
-						className={`flex transition-all duration-300 ease-linear show-${show}`}
-						style={{
-							transform: `translateX(-${currentIndex * (100 / show)}%)`,
-							transition: !transitionEnabled ? "none" : undefined,
-						}}
-						onTransitionEnd={() => handleTransitionEnd()}
-					>
-						{length > show && isRepeating && renderExtraPrev()}
-						{children}
-						{length > show && isRepeating && renderExtraNext()}
+		<div
+			onTouchStart={handleTouchStart}
+			onTouchMove={handleTouchMove}
+			className={classNames(
+				isOpen ? "opacity-100" : "pointer-events-none opacity-0",
+				"fixed top-0 left-0 z-[200] flex min-h-screen w-full cursor-auto items-center justify-center bg-primary transition-opacity duration-500"
+			)}
+			onClick={onClose}
+		>
+			<div
+				onClick={(e) => e.stopPropagation()}
+				className="relative flex w-[90%] flex-col gap-4 md:gap-6"
+			>
+				<div className="relative z-[-1] h-[80vh] w-full">
+					<Image
+						src={slides[currentIndex].src}
+						alt={slides[currentIndex].alt}
+						layout="fill"
+						objectFit="contain"
+						objectPosition="center"
+						quality={100}
+						placeholder="blur"
+					/>
+				</div>
+
+				<div className="flex justify-between text-secondary">
+					<div>{`${currentIndex + 1} / ${slides.length}`}</div>
+					<div className="flex gap-6">
+						<button onClick={goToPrevious}>Previous</button>
+						<button onClick={goToNext}>Next</button>
+						<button
+							onClick={onClose}
+							className="absolute right-0 top-0 rounded-bl-lg bg-[rgba(30,30,30,0.8)] px-2 py-1"
+						>
+							Close
+						</button>
 					</div>
 				</div>
-				{/* You can alwas change the content of the button to other things */}
-				{(isRepeating || currentIndex < length - show) && (
-					<button onClick={next} className="right-arrow">
-						&gt;
-					</button>
-				)}
 			</div>
 		</div>
 	);

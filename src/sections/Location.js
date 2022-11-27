@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { roomsImages } from "../constants";
+import { locationImages } from "../constants";
 import { useLoadScript } from "@react-google-maps/api";
 import { Map } from "../components";
 
@@ -9,10 +9,10 @@ export const Location = () => {
 	});
 
 	return (
-		<section className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-600">
+		<section className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-700">
 			<div className="my-20 w-[90%] max-w-[80rem]">
 				<h1 className="mb-8 w-full text-3xl font-bold md:mb-14 md:text-5xl">
-					Location
+					In the mountains
 				</h1>
 
 				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -40,7 +40,7 @@ export const Location = () => {
 
 					<div className="h-full w-full text-center">
 						<div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-							{roomsImages.slice(0, 6).map((item) => (
+							{locationImages.slice(0, 6).map((item) => (
 								<div
 									key={item.id}
 									className="relative aspect-square min-h-[1rem]"
@@ -50,7 +50,8 @@ export const Location = () => {
 										alt={item.alt}
 										layout="fill"
 										objectFit="cover"
-										objectPosition="center"
+										objectPosition={item.position ? item.position : "center"}
+										placeholder="blur"
 									/>
 								</div>
 							))}

@@ -1,28 +1,28 @@
-const focusStyle = "focus:outline-none focus:underline hover:underline";
-
 export const navigation = [
 	{
-		link: "#home",
+		link: "/",
 		title: "Home",
-		class: focusStyle,
 		content: "Home",
 	},
 	{
 		link: "#about",
 		title: "About",
-		class: focusStyle,
 		content: "About",
 	},
 	{
-		link: "#gallery",
-		title: "View the gallery",
-		class: focusStyle,
-		content: "Gallery",
+		link: "/#rooms",
+		title: "Rooms",
+		content: "Rooms",
 	},
 	{
-		link: "#contact",
-		title: "Contact us",
-		class: focusStyle,
-		content: "Contact",
+		link: "/#activities",
+		title: "Activities you can do",
+		content: "Activities",
 	},
+	// uncomment when book-now page is ready
+	// {
+	// 	link: "/contact",
+	// 	title: "Contact us",
+	// 	content: "Contact",
+	// },
 ];

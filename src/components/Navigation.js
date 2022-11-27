@@ -1,6 +1,7 @@
 import { navigation } from "../constants";
 import { classNames } from "../utils";
 import { NavLink } from "../components";
+import Link from "next/link";
 
 export const Navigation = ({ onClick, isOpen }) => {
 	return (
@@ -13,14 +14,20 @@ export const Navigation = ({ onClick, isOpen }) => {
 			<ul className="mb-10 flex flex-col items-center justify-center gap-10 md:mb-0 md:flex-row">
 				{navigation.map((nav) => (
 					<li key={nav.title} onClick={onClick}>
-						<a href={nav.link} title={nav.title} className={nav.class}>
-							{nav.content}
-						</a>
+						<Link href={nav.link}>
+							<a
+								title={nav.title}
+								className="hover:underline focus:underline focus:outline-none"
+							>
+								{nav.content}
+							</a>
+						</Link>
 					</li>
 				))}
 			</ul>
 
-			<NavLink href="/book-now" addClass="hidden lg:block">
+			{/* change /contact to book-now when book now page is ready */}
+			<NavLink href="/contact" addClass="lg:block">
 				Book now
 			</NavLink>
 		</div>

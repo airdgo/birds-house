@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Menu, Navigation } from "../components";
 import { useState } from "react";
 import { classNames } from "../utils";
+import Link from "next/link";
 
 export const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -26,13 +27,14 @@ export const Header = () => {
 			/>
 			<nav className="relative mx-auto flex h-12 w-[90%] max-w-[90rem] items-center">
 				<div className="relative flex h-12 w-full items-center justify-between md:hidden">
-					<a
-						href="/"
-						title="Home"
-						className="flex w-14 items-center focus:outline focus:outline-1 focus:outline-secondary"
-					>
-						<Image src={logo} alt="Birds House logo" />
-					</a>
+					<Link href="/">
+						<a
+							title="Home"
+							className="flex w-14 items-center focus:outline focus:outline-1 focus:outline-secondary"
+						>
+							<Image src={logo} alt="Birds House logo" />
+						</a>
+					</Link>
 
 					<Menu onClick={toggleMenu} isOpen={isOpen} />
 				</div>
