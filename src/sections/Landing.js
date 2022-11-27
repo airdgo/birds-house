@@ -22,7 +22,7 @@ export const Landing = () => {
 
 				<h1 className="font-accent tracking-widest">Parâng / Romania</h1>
 
-				<NavLink href="/book-now" addClass="lg:hidden mt-12">
+				<NavLink href="/contact" addClass="lg:hidden mt-12">
 					Book now
 				</NavLink>
 			</div>
