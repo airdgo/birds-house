@@ -7,9 +7,10 @@ export const Footer = () => {
 				<li>
 					<Link href="/contact">Contact</Link>
 				</li>
-				<li>
+				{/* Uncomment when book now page is ready */}
+				{/* <li>
 					<Link href="/book-now">Book Now</Link>
-				</li>
+				</li> */}
 			</ul>
 		</footer>
 	);
