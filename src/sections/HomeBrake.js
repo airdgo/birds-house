@@ -16,7 +16,7 @@ export const HomeBrake = () => {
 
 			<div className="absolute top-0 z-30 flex h-full w-full items-center py-10 sm:block md:py-60">
 				<div className="top-20 mx-auto w-[90%] sm:sticky md:top-60">
-					<h1 className="w-[80%] text-3xl sm:w-1/2 md:text-6xl">
+					<h1 className="w-[80%] text-3xl sm:w-1/2 md:text-5xl lg:text-6xl">
 						Sometimes you will never know the value of a moment until it becomes
 						a memory.
 					</h1>

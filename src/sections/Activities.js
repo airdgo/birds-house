@@ -21,7 +21,7 @@ export const Activities = () => {
 			const { isDesktop } = context.conditions,
 				trigger = isDesktop ? "#activities" : "";
 			if (isDesktop) {
-				const tl = gsap.timeline({
+				const timeline = gsap.timeline({
 					scrollTrigger: {
 						trigger: trigger,
 						scrub: 0.5,
@@ -29,7 +29,7 @@ export const Activities = () => {
 						pin: true,
 					},
 				});
-				tl.to("#element-to-animate", { x: "-100%" });
+				timeline.to("#element-to-animate", { x: "-160%" });
 				return () => {};
 			}
 		};
@@ -64,7 +64,7 @@ export const Activities = () => {
 							<IconImage key={image.alt} image={image} />
 						) : (
 							<PlainImage
-								key={image.id}
+								key={image.index}
 								image={image}
 								setImageIndex={setImageIndex}
 								setIsOpen={setIsOpen}
@@ -100,7 +100,7 @@ export const PlainImage = ({ image, setImageIndex, setIsOpen }) => {
 		<div className="relative z-10 h-[50vw] min-h-[15rem] w-full shrink-0 md:h-[30vw] md:w-[40vw]">
 			<div
 				onClick={() => {
-					setImageIndex(image.id);
+					setImageIndex(image.index);
 					setIsOpen(true);
 				}}
 				className="relative mx-auto h-full w-[90%] cursor-pointer overflow-hidden rounded-xl md:w-full md:rounded-3xl"

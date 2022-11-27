@@ -19,9 +19,10 @@ export const navigation = [
 		title: "Activities you can do",
 		content: "Activities",
 	},
-	{
-		link: "/contact",
-		title: "Contact us",
-		content: "Contact",
-	},
+	// uncomment when book-now page is ready
+	// {
+	// 	link: "/contact",
+	// 	title: "Contact us",
+	// 	content: "Contact",
+	// },
 ];

@@ -26,7 +26,8 @@ export const Navigation = ({ onClick, isOpen }) => {
 				))}
 			</ul>
 
-			<NavLink href="/book-now" addClass="lg:block">
+			{/* change /contact to book-now when book now page is ready */}
+			<NavLink href="/contact" addClass="lg:block">
 				Book now
 			</NavLink>
 		</div>

@@ -1,6 +1,7 @@
 import bikingIcon from "../assets/icons/biking.svg";
 import snowboardingIcon from "../assets/icons/snowboarding.svg";
 import hikingIcon from "../assets/icons/hiking.svg";
+import paraglidingIcon from "../assets/icons/paragliding.svg";
 import birdsIcon from "../assets/icons/birds.svg";
 
 const activitiesIcons = [
@@ -19,6 +20,12 @@ const activitiesIcons = [
 	{
 		src: hikingIcon,
 		alt: "an icon with a man hiking",
+		isVisible: true,
+		icon: true,
+	},
+	{
+		src: paraglidingIcon,
+		alt: "an icon with a man paragliding",
 		isVisible: true,
 		icon: true,
 	},
