@@ -24,6 +24,7 @@ export const Location = () => {
 						<a
 							href="https://instagram.com/birdshouse__?igshid=YmMyMTA2M2Y="
 							target="_blank"
+							rel="noreferrer"
 						>
 							Instagram
 						</a>
@@ -31,6 +32,7 @@ export const Location = () => {
 						<a
 							href="https://www.facebook.com/birdshouse_parang-102485455211263"
 							target="_blank"
+							rel="noreferrer"
 						>
 							Facebook
 						</a>
