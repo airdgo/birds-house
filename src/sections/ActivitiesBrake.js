@@ -5,7 +5,7 @@ export const ActivitiesBrake = () => {
 	return (
 		<section className="relative text-center text-neutral-50">
 			<ParallaxBanner
-				layers={[{ image: activitiesBrake.src, speed: -15 }]}
+				layers={[{ image: activitiesBrake.src, speed: -7 }]}
 				className="aspect-[2/1]"
 			/>
 			<div className="absolute inset-0 aspect-[2/1] w-full bg-primary opacity-30" />

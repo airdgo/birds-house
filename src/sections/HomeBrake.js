@@ -8,7 +8,7 @@ export const HomeBrake = () => {
 		<section className="relative min-h-screen bg-primary text-secondary">
 			<div className="relative h-[140vw] min-h-screen overflow-hidden bg-inherit opacity-80 lg:h-[120vw]">
 				<ParallaxBanner
-					layers={[{ image: image, speed: 20 }]}
+					layers={[{ image: image, speed: 7 }]}
 					className="h-full w-full"
 				/>
 				<div className="absolute inset-0 z-20 m-auto h-[80%] w-4/5 rounded-full shadow-[0_0_0_9999px_#1e1e1e] sm:h-[90%]" />
