@@ -55,7 +55,7 @@ export const Activities = () => {
 			>
 				<div
 					id="element-to-animate"
-					className="flex h-full w-full flex-col items-center overflow-hidden md:flex-row md:overflow-visible first:[&>div]:rotate-12 md:first:[&>div]:rotate-0 [&:nth-child(3)]:[&>div]:rotate-flip-12 md:[&:nth-child(3)]:[&>div]:rotate-0 [&:nth-child(5)]:[&>div]:rotate-12 md:[&:nth-child(5)]:[&>div]:rotate-0 last:[&>div]:[&>span]:mb-7"
+					className="flex h-full w-full flex-col items-center overflow-hidden md:flex-row md:overflow-visible first:[&>div]:rotate-12 md:first:[&>div]:rotate-0 [&:nth-child(3)]:[&>div]:rotate-flip-12 md:[&:nth-child(3)]:[&>div]:rotate-0 [&:nth-child(5)]:[&>div]:rotate-12 md:[&:nth-child(5)]:[&>div]:rotate-0 last:[&>div]:[&>span]:mb-7 last:[&>div]:last:[&>div]:last:[&>div]:hidden md:last:[&>div]:last:[&>div]:last:[&>div]:block"
 				>
 					{visibleImages.map((image) => {
 						const isIconImage = !!image.icon;
@@ -89,7 +89,9 @@ export const IconImage = ({ image }) => {
 		<div className="z-10 flex h-[32vw] min-h-[10rem] w-[50rem] shrink-0 justify-center overflow-hidden rounded-3xl md:h-[30vw] md:w-[20vw]">
 			<div className="relative flex w-full flex-col justify-center gap-[2px]">
 				<Image src={image.src} alt={image.alt} />
-				<hr className="border border-secondary" />
+				<div>
+					<hr className="border border-secondary" />
+				</div>
 			</div>
 		</div>
 	);
