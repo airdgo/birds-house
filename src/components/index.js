@@ -5,4 +5,3 @@ export * from "./Navigation";
 export * from "./NavLink";
 export * from "./RoomsImagesWraper";
 export * from "./Carousel";
-export * from "./Map";
