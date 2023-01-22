@@ -5,7 +5,7 @@ export const RoomsBrake = () => {
 	return (
 		<section className="relative text-center text-neutral-50">
 			<ParallaxBanner
-				layers={[{ image: roomsBrake.src, speed: -15 }]}
+				layers={[{ image: roomsBrake.src, speed: -7 }]}
 				className="aspect-[2/1]"
 			/>
 			<div className="absolute inset-0 flex items-center justify-center">

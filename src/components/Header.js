@@ -22,7 +22,7 @@ export const Header = () => {
 			<div
 				className={classNames(
 					isOpen ? "translate-y-0" : "-translate-y-[calc(100vh-3rem)]",
-					"absolute h-screen w-full bg-[#0f1922cc] backdrop-blur duration-500 md:-translate-y-[calc(100vh-3rem)] md:bg-transparent md:backdrop-blur-0"
+					"absolute h-screen w-full bg-[#1e1e1ee6] backdrop-blur duration-500 md:-translate-y-[calc(100vh-3rem)] md:bg-transparent md:backdrop-blur-0"
 				)}
 			/>
 			<nav className="relative mx-auto flex h-12 w-[90%] max-w-[90rem] items-center">

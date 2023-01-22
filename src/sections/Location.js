@@ -1,15 +1,13 @@
 import Image from "next/image";
 import { locationImages } from "../constants";
-import { useLoadScript } from "@react-google-maps/api";
-import { Map } from "../components";
+import home from "../assets/home.jpg";
 
 export const Location = () => {
-	const { isLoaded } = useLoadScript({
-		googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-	});
-
 	return (
-		<section className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-700">
+		<section
+			id="location"
+			className="grid min-h-screen place-items-center bg-secondary text-lg text-gray-700"
+		>
 			<div className="my-20 w-[90%] max-w-[80rem]">
 				<h1 className="mb-8 w-full text-3xl font-bold md:mb-14 md:text-5xl">
 					In the mountains
@@ -38,7 +36,15 @@ export const Location = () => {
 						</a>
 					</div>
 
-					{isLoaded ? <Map /> : <div>Loading...</div>}
+					<div className="aspect-video lg:aspect-auto relative">
+						<Image
+							src={home}
+							alt="Birds House cabin"
+							layout="fill"
+							objectFit="cover"
+							placeholder="blur"
+						/>
+					</div>
 
 					<div className="h-full w-full text-center">
 						<div className="grid grid-cols-2 gap-2 sm:grid-cols-3">

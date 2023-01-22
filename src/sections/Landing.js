@@ -17,7 +17,13 @@ export const Landing = () => {
 
 			<div className="flex h-screen flex-col items-center bg-gradient-to-br from-primary backdrop-blur-[2px] lg:w-2/5">
 				<div className="relative mx-8 mt-48 mb-4">
-					<Image src={logo} alt="Birds House logo" width="380" height="220" />
+					<Image
+						src={logo}
+						alt="Birds House logo"
+						width="380"
+						height="220"
+						priority
+					/>
 				</div>
 
 				<h1 className="font-accent tracking-widest">Parâng / Romania</h1>
