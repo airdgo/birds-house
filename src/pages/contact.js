@@ -2,6 +2,7 @@ import Layout from "../layout/Layout";
 import Image from "next/image";
 import bird from "../assets/bird.svg";
 import contactBg from "../assets/contact-bg.svg";
+import { SocialMedia } from "../components/SocialMedia";
 
 export default function Contact() {
 	return (
@@ -22,10 +23,11 @@ export default function Contact() {
 						</address>
 					</div>
 
-					<div className="row-start-2">
+					<div className="row-start-2 [&>a]:block">
 						<h1 className="mb-6 text-3xl font-bold md:text-4xl">Contact Us</h1>
-						<div>+40 734 512 510</div>
-						<div>birdshouse@gmail.com</div>
+						<a href="tel:+40723593424">+40 723 593 424</a>
+						<a href="mailto:birdshouse@gmail.com">birdshouse@gmail.com</a>
+						<SocialMedia addClass={"mt-4"} />
 					</div>
 
 					<div className="absolute left-0 top-[31rem] w-full md:hidden">
