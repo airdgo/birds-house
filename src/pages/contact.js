@@ -2,7 +2,7 @@ import Layout from "../layout/Layout";
 import Image from "next/image";
 import bird from "../assets/bird.svg";
 import contactBg from "../assets/contact-bg.svg";
-import { SocialMedia } from "../components/SocialMedia";
+import { SocialMedia } from "../components";
 
 export default function Contact() {
 	return (
