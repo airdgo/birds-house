@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { locationImages } from "../constants";
 import home from "../assets/home.jpg";
+import { LocationIcon } from "../assets/icons/LocationIcon";
 
 export const Location = () => {
 	return (
@@ -15,7 +16,13 @@ export const Location = () => {
 
 				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
 					<address className="not-italic">
-						Strada Alpina nr. 1, Petroșani, România
+						<a
+							href="http://maps.google.com/?q=Birds House Parang Romania"
+							target="_blank"
+						>
+							Strada Alpina nr. 1, Petroșani, România{" "}
+							<LocationIcon className="inline fill-gray-700 w-6 h-6 md:w-7 md:h-7" />
+						</a>
 					</address>
 
 					<div className="row-start-3 text-center lg:row-start-auto">

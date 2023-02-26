@@ -2,12 +2,13 @@ import Layout from "../layout/Layout";
 import Image from "next/image";
 import bird from "../assets/icons/bird.svg";
 import { SocialMedia } from "../components";
+import { LocationIcon } from "../assets/icons/LocationIcon";
 import flyingBirds from "../assets/icons/flying-birds.svg";
 
 export default function Contact() {
 	return (
 		<Layout>
-			<section className="relative grid min-h-screen place-items-center overflow-hidden bg-secondary text-gray-600  ">
+			<section className="relative grid min-h-screen place-items-center overflow-hidden bg-secondary text-gray-600">
 				<div className="absolute left-0 top-[32rem] w-full md:hidden">
 					<svg
 						id="visual"
@@ -32,9 +33,23 @@ export default function Contact() {
 						<Image src={flyingBirds} alt="flying birds" />
 					</div>
 					<div>
-						<h1 className="mb-6 text-3xl font-bold md:text-4xl">Find Us</h1>
+						<h1 className="mb-6 text-3xl font-bold md:text-4xl w-max">
+							<a
+								href="http://maps.google.com/?q=Birds House Parang Romania"
+								target="_blank"
+							>
+								Find Us{" "}
+								<LocationIcon className="inline fill-gray-600 w-6 h-6 md:w-8 md:h-8" />
+							</a>
+						</h1>
+
 						<address className="max-w-[10rem] not-italic">
-							Strada Alpina nr 1, Petroșani, România
+							<a
+								href="http://maps.google.com/?q=Birds House Parang Romania"
+								target="_blank"
+							>
+								Strada Alpina nr 1, Petroșani, România
+							</a>
 						</address>
 					</div>
 
