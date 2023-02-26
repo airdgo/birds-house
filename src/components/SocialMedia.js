@@ -5,7 +5,7 @@ export const SocialMedia = ({ addClass }) => {
 		<div className={classNames(addClass, "flex gap-3")}>
 			{/* Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. */}
 			{/* FACEBOOK */}
-			<a href="https://fb.com/100064250673431" target="_blank">
+			<a href="https://fb.com/100064250673431" target="_blank" rel="noreferrer">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 320 512"
@@ -18,7 +18,7 @@ export const SocialMedia = ({ addClass }) => {
 				</svg>
 			</a>
 			{/* MESSENGER */}
-			<a href="http://m.me/102485455211263" target="_blank">
+			<a href="http://m.me/102485455211263" target="_blank" rel="noreferrer">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -31,7 +31,7 @@ export const SocialMedia = ({ addClass }) => {
 				</svg>
 			</a>
 			{/* WHATSAPP */}
-			<a href="https://wa.me/0723593424" target="_blank">
+			<a href="https://wa.me/0723593424" target="_blank" rel="noreferrer">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 448 512"
@@ -44,7 +44,11 @@ export const SocialMedia = ({ addClass }) => {
 				</svg>
 			</a>
 			{/* INSTAGRAM */}
-			<a href="https://www.instagram.com/birdshouse__" target="_blank">
+			<a
+				href="https://www.instagram.com/birdshouse__"
+				target="_blank"
+				rel="noreferrer"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 448 512"

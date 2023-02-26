@@ -19,6 +19,7 @@ export const Location = () => {
 						<a
 							href="http://maps.google.com/?q=Birds House Parang Romania"
 							target="_blank"
+							rel="noreferrer"
 						>
 							Strada Alpina nr. 1, Petroșani, România{" "}
 							<LocationIcon className="inline fill-gray-700 w-6 h-6 md:w-7 md:h-7" />

@@ -37,6 +37,7 @@ export default function Contact() {
 							<a
 								href="http://maps.google.com/?q=Birds House Parang Romania"
 								target="_blank"
+								rel="noreferrer"
 							>
 								Find Us{" "}
 								<LocationIcon className="inline fill-gray-600 w-6 h-6 md:w-8 md:h-8" />
@@ -47,6 +48,7 @@ export default function Contact() {
 							<a
 								href="http://maps.google.com/?q=Birds House Parang Romania"
 								target="_blank"
+								rel="noreferrer"
 							>
 								Strada Alpina nr 1, Petroșani, România
 							</a>
