@@ -4,6 +4,7 @@ import bird from "../assets/icons/bird.svg";
 import { SocialMedia } from "../components";
 import { LocationIcon } from "../assets/icons/LocationIcon";
 import flyingBirds from "../assets/icons/flying-birds.svg";
+import { ContactButton } from "../components/ContactButton";
 
 export default function Contact() {
 	return (
@@ -107,13 +108,7 @@ export default function Contact() {
 									className="mt-2 w-full resize-none rounded-sm border border-gray-400 bg-transparent px-3 py-2 focus:outline focus:outline-1 focus:outline-gray-600"
 								></textarea>
 							</div>
-
-							<button className="mt-6 flex max-w-[10rem] items-center justify-center gap-1 border-2 border-gray-400 px-3 py-2 font-thin tracking-wide text-gray-400 hover:border-gray-300 hover:bg-gray-300 hover:text-gray-600 focus:outline focus:outline-1 focus:outline-gray-600">
-								Send!
-								<div className="relative h-8 w-8">
-									<Image src={bird} alt="bird" layout="fill" />
-								</div>
-							</button>
+							<ContactButton type="submit" />
 						</form>
 					</div>
 				</div>
