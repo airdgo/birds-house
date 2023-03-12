@@ -6,3 +6,4 @@ export * from "./NavLink";
 export * from "./RoomsImagesWraper";
 export * from "./Carousel";
 export * from "./SocialMedia";
+export * from "./ContactButton";

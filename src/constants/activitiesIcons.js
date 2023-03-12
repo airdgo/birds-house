@@ -1,8 +1,8 @@
-import bikingIcon from "../assets/icons/biking.svg";
-import snowboardingIcon from "../assets/icons/snowboarding.svg";
-import hikingIcon from "../assets/icons/hiking.svg";
-import paraglidingIcon from "../assets/icons/paragliding.svg";
-import birdsIcon from "../assets/icons/birds.svg";
+import bikingIcon from "../assets/icons/svg/biking.svg";
+import snowboardingIcon from "../assets/icons/svg/snowboarding.svg";
+import hikingIcon from "../assets/icons/svg/hiking.svg";
+import paraglidingIcon from "../assets/icons/svg/paragliding.svg";
+import birdsIcon from "../assets/icons/svg/birds.svg";
 
 const activitiesIcons = [
 	{

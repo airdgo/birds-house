@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { locationImages } from "../constants";
 import home from "../assets/home.jpg";
-import { LocationIcon } from "../assets/icons/LocationIcon";
+import { LocationIcon } from "../assets/icons/js";
 
 export const Location = () => {
 	return (
