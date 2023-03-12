@@ -38,7 +38,7 @@ export default function Contact() {
 						</address>
 					</div>
 
-					<div className="row-start-2 [&>a]:block">
+					<div className="row-start-2 [&>a]:block [&>a]:w-max">
 						<h1 className="mb-6 text-3xl font-bold md:text-4xl">Contact Us</h1>
 						<a href="tel:+40723593424">+40 723 593 424</a>
 						<a href="mailto:birdshouse@gmail.com">birdshouse@gmail.com</a>
