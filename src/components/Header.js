@@ -1,4 +1,4 @@
-import logo from "../assets/logo.svg";
+import logo from "../assets/icons/svg/logo.svg";
 import Image from "next/image";
 import { Menu, Navigation } from "../components";
 import { useState } from "react";
