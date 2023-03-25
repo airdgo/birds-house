@@ -1,54 +1,10 @@
 import Layout from "../layout/Layout";
 import Image from "next/image";
-import { SocialMedia, ContactButton } from "../components";
+import { SocialMedia, ContactForm } from "../components";
 import { LocationIcon, RoundedLine } from "../assets/icons/js";
 import flyingBirds from "../assets/icons/svg/flying-birds.svg";
-import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
-import Alert from "../components/Alert";
 
 export default function Contact() {
-	const formRef = useRef();
-	const [isVisible, setIsVisible] = useState(false);
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState(false);
-	const alertMessage = error
-		? "Ups! Something went wrong!"
-		: "Your email has been sent!";
-
-	async function sendEmail(e) {
-		e.preventDefault();
-
-		const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
-		const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-		const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY;
-
-		try {
-			setLoading(true);
-			setError(false);
-			await emailjs.sendForm(
-				SERVICE_ID,
-				TEMPLATE_ID,
-				formRef.current,
-				PUBLIC_KEY
-			);
-			formRef.current.reset();
-		} catch (error) {
-			console.error(error);
-			setError(true);
-		}
-		displayAlert();
-		setLoading(false);
-	}
-
-	function displayAlert() {
-		setIsVisible(true);
-
-		setTimeout(() => {
-			setIsVisible(false);
-		}, 2000);
-	}
-
 	return (
 		<Layout>
 			<section className="relative grid min-h-screen place-items-center overflow-hidden bg-secondary text-gray-600">
@@ -90,61 +46,9 @@ export default function Contact() {
 					</div>
 
 					<div className="row-span-2 mt-16 md:mt-0">
-						<form
-							ref={formRef}
-							onSubmit={sendEmail}
-							className="grid grid-cols-2 gap-2"
-						>
-							<div>
-								<label htmlFor="firstName">First Name</label>
-								<input
-									required
-									type="text"
-									id="firstName"
-									name="firstName"
-									className="mt-2 w-full rounded-sm border border-gray-400 bg-transparent px-3 py-2 focus:outline focus:outline-1 focus:outline-gray-600"
-								/>
-							</div>
-
-							<div>
-								<label htmlFor="firstName">Last Name</label>
-								<input
-									required
-									type="text"
-									id="lastName"
-									name="lastName"
-									className="mt-2 w-full rounded-sm border border-gray-400 bg-transparent px-3 py-2 focus:outline focus:outline-1 focus:outline-gray-600"
-								/>
-							</div>
-
-							<div className="col-span-2 mt-6">
-								<label htmlFor="email">Email Address</label>
-								<input
-									required
-									type="email"
-									id="email"
-									name="email"
-									className="mt-2 w-full rounded-sm border border-gray-400 bg-transparent px-3 py-2 focus:outline focus:outline-1 focus:outline-gray-600"
-								/>
-							</div>
-
-							<div className="col-span-2 mt-6">
-								<label htmlFor="message">Message</label>
-								<textarea
-									required
-									id="message"
-									name="message"
-									rows="4"
-									className="mt-2 w-full resize-none rounded-sm border border-gray-400 bg-transparent px-3 py-2 focus:outline focus:outline-1 focus:outline-gray-600"
-								></textarea>
-							</div>
-							<ContactButton type="submit" disabled={loading} />
-						</form>
+						<ContactForm />
 					</div>
 				</div>
-				<Alert visible={isVisible} error={error}>
-					{alertMessage}
-				</Alert>
 			</section>
 		</Layout>
 	);

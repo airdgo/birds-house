@@ -8,3 +8,4 @@ export * from "./Carousel";
 export * from "./SocialMedia";
 export * from "./ContactButton";
 export * from "./Alert";
+export * from "./ContactForm";
