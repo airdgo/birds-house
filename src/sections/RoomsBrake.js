@@ -1,4 +1,4 @@
-import roomsBrake from "../assets/roomsBrake.jpg";
+import roomsBrake from "../assets/breaks/roomsBrake.jpg";
 import { ParallaxBanner } from "react-scroll-parallax";
 
 export const RoomsBrake = () => {

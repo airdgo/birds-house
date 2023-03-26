@@ -1,4 +1,4 @@
-import activitiesBrake from "../assets/activitiesBrake2.jpeg";
+import activitiesBrake from "../assets/breaks/activitiesBrake.jpeg";
 import { ParallaxBanner } from "react-scroll-parallax";
 
 export const ActivitiesBrake = () => {
