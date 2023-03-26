@@ -1,6 +1,6 @@
 import Image from "next/image";
 import backgroundImage from "../assets/home.jpg";
-import logo from "../assets/logo.svg";
+import logo from "../assets/icons/svg/logo.svg";
 import { NavLink } from "../components";
 
 export const Landing = () => {

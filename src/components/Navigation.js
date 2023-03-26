@@ -2,6 +2,7 @@ import { navigation } from "../constants";
 import { classNames } from "../utils";
 import { NavLink } from "../components";
 import Link from "next/link";
+import { SocialMedia } from "../components";
 
 export const Navigation = ({ onClick, isOpen }) => {
 	return (
@@ -30,6 +31,8 @@ export const Navigation = ({ onClick, isOpen }) => {
 			<NavLink href="/contact" addClass="lg:block">
 				Book now
 			</NavLink>
+
+			<SocialMedia addClass={"mt-10 md:hidden"} />
 		</div>
 	);
 };
