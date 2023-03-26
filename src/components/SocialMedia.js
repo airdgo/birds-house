@@ -64,7 +64,7 @@ export const SocialMedia = ({ addClass }) => {
 		{
 			name: "whatsapp icon",
 			icon: whatsappIcon,
-			link: "https://wa.me/0723593424",
+			link: "https://wa.me/723593424",
 		},
 		{
 			name: "instagram icon",
