@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { classNames } from "../utils";
 
-export const RoomsImagesWrapper = ({ addClass, ...imageProps }) => {
+export const RoomsImagesWrapper = ({ addClass, position, ...imageProps }) => {
 	return (
 		<div
 			className={classNames(
@@ -14,7 +14,7 @@ export const RoomsImagesWrapper = ({ addClass, ...imageProps }) => {
 				{...imageProps}
 				layout="fill"
 				objectFit="cover"
-				objectPosition="center"
+				objectPosition={position ?? "center"}
 				placeholder="blur"
 			/>
 		</div>

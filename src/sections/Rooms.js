@@ -14,6 +14,7 @@ export const Rooms = () => {
 					src={item.src}
 					alt={item.alt}
 					addClass={item?.class}
+					position={item?.position}
 					onClick={() => {
 						setImageIndex(item.id);
 						setIsOpen(true);
