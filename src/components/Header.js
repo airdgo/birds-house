@@ -32,7 +32,7 @@ export const Header = () => {
 							title="Home"
 							className="flex w-14 items-center focus:outline focus:outline-1 focus:outline-secondary"
 						>
-							<Image src={logo} alt="Birds House logo" />
+							<Image src={logo} alt="Birds House logo" quality={50} />
 						</a>
 					</Link>
 

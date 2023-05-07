@@ -1,5 +1,5 @@
 import Image from "next/image";
-import backgroundImage from "../assets/home.jpg";
+import backgroundImage from "../assets/cabin/home.jpg";
 import logo from "../assets/icons/svg/logo.svg";
 import { NavLink } from "../components";
 
@@ -16,13 +16,14 @@ export const Landing = () => {
 			/>
 
 			<div className="flex h-screen flex-col items-center bg-gradient-to-br from-primary backdrop-blur-[2px] lg:w-2/5">
-				<div className="relative mx-8 mt-48 mb-4">
+				<div className="relative mx-12 mt-48 mb-4">
 					<Image
 						src={logo}
 						alt="Birds House logo"
-						width="380"
+						width="350"
 						height="220"
 						priority
+						quality={50}
 					/>
 				</div>
 
