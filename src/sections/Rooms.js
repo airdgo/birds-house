@@ -5,23 +5,20 @@ import { useState } from "react";
 export const Rooms = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [imageIndex, setImageIndex] = useState(0);
-
-	const renderImages = roomsImages.map(
-		(item) =>
-			item?.show && (
-				<RoomsImagesWrapper
-					key={item.id}
-					src={item.src}
-					alt={item.alt}
-					addClass={item?.class}
-					position={item?.position}
-					onClick={() => {
-						setImageIndex(item.id);
-						setIsOpen(true);
-					}}
-				/>
-			)
-	);
+	const visibleImages = roomsImages.filter((image) => image.show);
+	const renderImages = visibleImages.map((image) => (
+		<RoomsImagesWrapper
+			key={image.id}
+			src={image.src}
+			alt={image.alt}
+			addClass={image?.class}
+			position={image?.position}
+			onClick={() => {
+				setImageIndex(image.id);
+				setIsOpen(true);
+			}}
+		/>
+	));
 
 	return (
 		<section
