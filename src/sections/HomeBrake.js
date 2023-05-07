@@ -1,5 +1,5 @@
 import { ParallaxBanner } from "react-scroll-parallax";
-import homeBrake from "../assets/homeBrake3.JPG";
+import homeBrake from "../assets/breaks/homeBrake.webp";
 
 export const HomeBrake = () => {
 	const image = homeBrake.src;
