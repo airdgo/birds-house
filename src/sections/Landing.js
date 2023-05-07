@@ -13,7 +13,6 @@ export const Landing = () => {
 				layout="fill"
 				objectFit="cover"
 				objectPosition="right top"
-				quality={50}
 			/>
 
 			<div className="flex h-screen flex-col items-center bg-gradient-to-br from-primary backdrop-blur-[2px] lg:w-2/5">
