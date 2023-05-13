@@ -18,7 +18,7 @@ export default function Contact() {
 					<div>
 						<h1 className="mb-6 text-3xl font-bold md:text-4xl w-max">
 							<a
-								href="http://maps.google.com/?q=Birds House Parang Romania"
+								href="http://maps.google.com/?q=Birds+House+Parang+Romania"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -29,7 +29,7 @@ export default function Contact() {
 
 						<address className="max-w-[10rem] not-italic">
 							<a
-								href="http://maps.google.com/?q=Birds House Parang Romania"
+								href="http://maps.google.com/?q=Birds+House+Parang+Romania"
 								target="_blank"
 								rel="noreferrer"
 							>
@@ -41,7 +41,7 @@ export default function Contact() {
 					<div className="row-start-2 [&>a]:block [&>a]:w-max">
 						<h1 className="mb-6 text-3xl font-bold md:text-4xl">Contact Us</h1>
 						<a href="tel:+40723593424">+40 723 593 424</a>
-						<a href="mailto:birdshouse@gmail.com">birdshouse@gmail.com</a>
+						<a href="mailto:office@birdshouse.ro">office@birdshouse.ro</a>
 						<SocialMedia addClass={"mt-4"} />
 					</div>
 
